@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "concurrency-bug-detector"
+version = "0.1.0"
+description = "CLI tool to detect race conditions, lost updates, deadlocks, and non-serializable executions from logs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Rohan"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.scripts]
+concurrency-detector = "concurrency_detector.main:main"
+
+[tool.setuptools]
+packages = ["concurrency_detector"]

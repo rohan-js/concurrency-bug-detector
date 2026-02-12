@@ -1,0 +1,5 @@
+# Single-thread edge case: no conflicts
+T1 READ balance 100
+T1 WRITE balance 120
+T1 READ savings 50
+T1 WRITE savings 55

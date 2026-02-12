@@ -1,0 +1,13 @@
+# Combined scenario: race + lost update + non-serializable + deadlock
+T1 READ balance 100
+T2 READ balance 100
+T1 WRITE balance 150
+T2 WRITE balance 80
+T2 WRITE account_x 2
+T1 WRITE account_x 1
+T1 WRITE account_y 1
+T2 WRITE account_y 2
+T1 LOCK lockA
+T2 LOCK lockB
+T1 WAIT lockB
+T2 WAIT lockA
